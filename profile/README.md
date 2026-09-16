@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/banner.svg" width="100%" alt="Extended Research. Open infrastructure for the science of behaviour and cognition, human and artificial.">
+  <img src="assets/banner.svg" width="100%" alt="Extended Research. Open infrastructure for the science of human and machine intelligence.">
 </p>
 
 Extended Research develops open-source software for studies of human behaviour
