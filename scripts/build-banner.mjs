@@ -9,7 +9,7 @@ const citrus = "#C8F522", coral = "#FF8066", pink = "#F551A4", iris = "#9877FF",
 let seed = 7;
 const rand = () => ((seed = (seed * 16807) % 2147483647) / 2147483647) - 0.5;
 
-const x0 = 64, x1 = W - 64, top = 176, row = 50, amp = 16;
+const x0 = 64, x1 = W - 64, top = 196, row = 50, amp = 16;
 const path = (fn, step) => {
   let d = "";
   for (let x = x0; x <= x1; x += step) d += `${d ? "L" : "M"}${x} ${fn(x).toFixed(1)}`;
@@ -40,23 +40,23 @@ const dots = traces.map((t, i) => {
 
 const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" role="img" aria-labelledby="t d">
   <title id="t">Extended Research.</title>
-  <desc id="d">Wordmark and the label "Open infrastructure for the science of brains and behaviour" above four synthetic signal traces. The traces are illustrative, not recorded data.</desc>
+  <desc id="d">Wordmark and the label "Open infrastructure for the science of behaviour and cognition, human and artificial" above four synthetic signal traces. The traces are illustrative, not recorded data.</desc>
   <defs>
     <clipPath id="recorded"><rect x="0" y="0" width="${cursor}" height="${H}"/></clipPath>
     <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse"><path d="M32 0H0V32" fill="none" stroke="${surface}" stroke-width="1"/></pattern>
   </defs>
   <rect width="${W}" height="${H}" rx="16" fill="${ink}"/>
-  <rect x="1" y="120" width="${W - 2}" height="${H - 121}" fill="url(#grid)" opacity="0.7"/>
-  <text x="64" y="84" fill="${paper}" font-family="Arial, Helvetica, sans-serif" font-size="48" font-weight="700" letter-spacing="-1.9">Extended Research<tspan fill="${citrus}">.</tspan></text>
-  <text x="${W - 64}" y="80" text-anchor="end" fill="${secondary}" font-family="Consolas, 'Liberation Mono', Menlo, monospace" font-size="15" letter-spacing="1.2">OPEN INFRASTRUCTURE FOR THE SCIENCE OF BRAINS AND BEHAVIOUR</text>
-  <line x1="64" y1="120" x2="${W - 64}" y2="120" stroke="${surface}" stroke-width="2"/>
+  <rect x="1" y="140" width="${W - 2}" height="${H - 141}" fill="url(#grid)" opacity="0.7"/>
+  <text x="64" y="76" fill="${paper}" font-family="Arial, Helvetica, sans-serif" font-size="48" font-weight="700" letter-spacing="-1.9">Extended Research<tspan fill="${citrus}">.</tspan></text>
+  <text x="66" y="110" fill="${secondary}" font-family="Consolas, 'Liberation Mono', Menlo, monospace" font-size="15" letter-spacing="1.2">OPEN INFRASTRUCTURE FOR THE SCIENCE OF BEHAVIOUR AND COGNITION, HUMAN AND ARTIFICIAL</text>
+  <line x1="64" y1="140" x2="${W - 64}" y2="140" stroke="${surface}" stroke-width="2"/>
   <g fill="none" stroke-width="2" stroke-linejoin="round" opacity="0.28">
     ${lines}
   </g>
   <g fill="none" stroke-width="2" stroke-linejoin="round" clip-path="url(#recorded)">
     ${lines}
   </g>
-  <line x1="${cursor}" y1="140" x2="${cursor}" y2="${H - 36}" stroke="${paper}" stroke-width="1.5" opacity="0.6"/>
+  <line x1="${cursor}" y1="160" x2="${cursor}" y2="${H - 36}" stroke="${paper}" stroke-width="1.5" opacity="0.6"/>
   ${dots}
 </svg>
 `;
